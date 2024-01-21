@@ -9,14 +9,14 @@
                 col-md-12
                 mx-auto
                 bg-warning
-                text-white
+                text-dark
                 p-md-5 p-4
                 shadow-lg
                 rounded-3
               ">
-                    <small>RESERVASI RESTAWRANT</small>
-                    <h1 class="fw-bold">Reservasi tempat meja di Restawrant</h1>
-                    <p>Pilih meja tempat anda reservasi tempat di Restawrant</p>
+                    <small></small>
+                    <h1 class="fw-bold">Reservasi Tempat</h1>
+                    <p>Pilih meja tempat anda</p>
                     <hr />
                     <form method="POST" action="{{ route('reservations.store.step.two') }}" class="row g-3">
                         @csrf
@@ -42,14 +42,14 @@
 
                         <div class="col-md-12 mx-auto mt-4 text-center">
                             <p class="text-center col-md-8 mx-auto">
-                                Dengan menekan tombol 'buat reservasi' berarti anda menyatakan setuju dan siap
-                                bertanggung jawab atas reservasi yang anda telah buat
+                                Dengan menekan tombol <b>" Buat Reservasi "</b> 
+                                berarti anda menyatakan setuju dan siap bertanggung jawab atas reservasi yang anda telah buat
                             </p>
                             <a href="{{ route('reservations.step.one') }}"
-                                class="btn btn-outline-light text-white px-5 py-2 fw-bold me-3">
+                                class="btn btn-outline-dark mt-2 px-4 py-2 fw-bold">
                                 <i class="fas fa-arrow-left"></i> &nbsp; Sebelumnya
                             </a>
-                            <button type="submit" class="btn btn-outline-light text-white px-5 py-2 fw-bold">
+                            <button type="submit" class="btn btn-outline-dark mt-2 px-4 py-2 fw-bold">
                                 Buat Reservasi &nbsp; <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>

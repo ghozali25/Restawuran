@@ -9,14 +9,14 @@
                 col-md-12
                 mx-auto
                 bg-warning
-                text-white
+                text-dark
                 p-md-5 p-4
                 shadow-lg
                 rounded-3
               ">
-                    <small>RESERVASI RESTAWRANT</small>
-                    <h1 class="fw-bold">Reservasi tempat meja di Restawrant</h1>
-                    <p>Isi form dibawah dengan benar untuk reservasi di Restawrant</p>
+                    <small></small>
+                    <h1 class="fw-bold">Reservasi Tempat</h1>
+                    <p>Isi form dibawah dengan benar untuk reservasi</p>
                     <hr />
                     <form method="POST" action="{{ route('reservations.store.step.one') }}" class="row g-3">
                         @csrf
@@ -72,14 +72,6 @@
                                 <option selected>Jumlah Tamu ...</option>
                                 <option value="1">1</option>
                                 <option value="2">2</option>
-                                <option value="3">3</option>
-                                <option value="4">4</option>
-                                <option value="5">5</option>
-                                <option value="6">6</option>
-                                <option value="7">7</option>
-                                <option value="8">8</option>
-                                <option value="9">9</option>
-                                <option value="10">10</option>
                             </select>
                             @error('guest_number')
                                 <p class="register_text_error">{{ $message }}</p>
@@ -91,7 +83,7 @@
                                 Tahap selanjutnya adalah memilih meja yang akan anda tempati, harap konfirmasi data dan
                                 nomor telepon yang telah diisi
                             </p>
-                            <button type="submit" class="btn btn-outline-light text-white px-5 py-2 fw-bold">
+                            <button type="submit" class="btn btn-outline-dark mt-2 px-4 py-2 fw-bold">
                                 Selanjutnya &nbsp; <i class="fas fa-arrow-right"></i>
                             </button>
                         </div>

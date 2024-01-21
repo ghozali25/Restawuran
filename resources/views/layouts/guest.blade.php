@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Restawrant — Harga Kaki Lima Rasa Kaki Lima!</title>
+    <title>Restawuran</title>
 
-    <meta name="title" content="Restawrant — Harga Kaki Lima Rasa Kaki Lima!">
-    <meta name="description" content="  Restawrant adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
+    <meta name="title" content="Restawuran">
+    <meta name="description" content="  Restawuran adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
                         dessert dan lain lain dengan harga kaki lima namun rasanya bintang lima. Outlet kita selalu
                         rame, jadi jangan lupa reservasi ya!">
     <link rel="icon" href="{{ url('cuba/assets/images/favicon.ico') }}" type="image/x-icon">
@@ -35,7 +35,7 @@
     <!-- ------------------------ Mobile Header Section ------------------------ -->
     <nav class="navbar navbar-light bg-white d-block d-sm-block d-md-block d-lg-none py-3 border-bottom">
         <div class="container-fluid">
-            <a class="navbar-brand fw-bold" href="#">🍣 Restawrant</a>
+            <a class="navbar-brand fw-bold" href="#">Restawuran</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
                 aria-controls="offcanvasNavbar">
                 <span class="navbar-toggler-icon"></span>
@@ -44,7 +44,7 @@
                 aria-labelledby="offcanvasNavbarLabel">
                 <div class="offcanvas-header">
                     <h5 class="offcanvas-title fw-bold" id="offcanvasNavbarLabel">
-                        🍣 Restawrant
+                        Restawuran
                     </h5>
                     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
                         aria-label="Close"></button>
@@ -108,12 +108,12 @@
                     <a class="nav-link link-dark text-grey px-2 no-effect-hover">|</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://wa.me/+628123456789" class="nav-link link-dark text-grey px-2" target="_blank">
-                        +628123456789</a>
+                    <a href="https://wa.me/+6281238935021" class="nav-link link-dark text-grey px-2" target="_blank">
+                        +6281238935021</a>
                 </li>
                 <li class="nav-item">
-                    <a href="https://wa.me/+628987654321" target="_blank"
-                        class="nav-link link-dark text-grey px-2">+628987654321</a>
+                    <a href="https://wa.me/+62000000000" target="_blank"
+                        class="nav-link link-dark text-grey px-2">+628000000</a>
                 </li>
             </ul>
         </div>
@@ -122,7 +122,7 @@
     <header class="py-3 mb-4 border-bottom d-none d-sm-none d-md-none d-lg-block bg-white sticky-top">
         <div class="container d-flex flex-wrap justify-content-center">
             <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto text-dark text-decoration-none">
-                <span class="fs-3 fw-bold">🍣 Restawrant</span>
+                <span class="fs-3 fw-bold">&#9749; Restawuran</span>
             </a>
             <button class="btn btn-warning text-white me-2 px-5 fw-500"
                 onclick="location.href='http://127.0.0.1:8000/reservation/step-one'" type="button"> <i
@@ -139,16 +139,16 @@
     <!-- --------------------------- Footer Section ---------------------------- -->
     <footer class="py-5">
         <div class="container">
-            <div class="row text-white">
+            <div class="row text-dark">
                 <div class="col-md-6 border-end">
-                    <h4 class="fw-bold">🍣 Restawrant — Harga kaki lima rasa bintang lima!</h4>
+                    <h4 class="fw-bold">Restawuran</h4>
                     <p class="">
-                        Restawrant adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
+                        Restawuran adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
                         dessert dan lain lain dengan harga kaki lima namun rasanya bintang lima. Outlet kita selalu
                         rame, jadi jangan lupa reservasi ya!
                     </p>
                     <small class="d-block mb-3">
-                        &copy; 2022 Syauqizaidan — Made with laravel 9.4.1 and bootstrap 5.2.0
+                        &copy; 2024 Ahmad Ghozali
                     </small>
                 </div>
 
@@ -156,28 +156,28 @@
                     <h4 class="fw-bold mb-3">Navigasi Cepat</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="/userlisting?srczz=&katfilt=6901">
-                                Beranda
+                            <a class="link-dark text-decoration-none" href="#">
+                            &#8226; Beranda
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="/userlisting?srczz=&katfilt=6905">
-                                Tentang Kami
+                            <a class="link-dark text-decoration-none" href="/#tentang-kami">
+                            &#8226; Tentang Kami
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="/userlisting?srczz=&katfilt=6904">
-                                Kategori
+                            <a class="link-dark text-decoration-none" href="{{ route('categories.index') }}">
+                            &#8226; Kategori
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="/userlisting?srczz=&katfilt=6902">
-                                Menu
+                            <a class="link-dark text-decoration-none" href="{{ route('menus.index') }}">
+                            &#8226; Menu
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="/userlisting?srczz=&katfilt=6903">
-                                Galeri Outlet
+                            <a class="link-dark text-decoration-none" href="/#galeri-outlet">
+                            &#8226; Galeri Outlet
                             </a>
                         </li>
                     </ul>
@@ -186,23 +186,23 @@
                     <h4 class="fw-bold mb-3">Sosial Media</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="#">
+                            <a class="link-dark text-decoration-none" href="https://wa.me/+6281238935021">
                                 <i class="fab fa-whatsapp"></i> &nbsp; Whatsapp
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="#" target="_blank">
+                            <a class="link-dark text-decoration-none" href="#" target="_blank">
                                 <i class="fab fa-instagram"></i> &nbsp; Instagram
                             </a>
                         </li>
                         <li class="mb-1">
-                            <a class="link-light text-decoration-none" href="#" target="_blank">
+                            <a class="link-dark text-decoration-none" href="#" target="_blank">
                                 <i class="fab fa-twitter"></i> &nbsp;Twitter
                             </a>
                         </li>
                         <li class="mb-5 mb-md-1">
-                            <a class="link-light text-decoration-none" href="#" target="_blank">
-                                <i class="fab fa-facebook-square"></i> &nbsp; Facebook
+                            <a class="link-dark text-decoration-none" href="https://www.linkedin.com/in/ahmadghozali25" target="_blank">
+                                <i class="fab fa-linkedin"></i> &nbsp; Linkedin
                             </a>
                         </li>
                     </ul>

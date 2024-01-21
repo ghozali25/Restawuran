@@ -16,7 +16,7 @@
                             style="border-radius:8px;">
                     </a>
                 </li>
-                <li class="splide__slide">
+               <!-- <li class="splide__slide">
                     <a href="{{ url('/reservation/step-one') }}">
                         <img src="{{ url('images/splide/landing-page/hero-slide-3.png') }}" class="d-block w-100"
                             style="border-radius:8px;">
@@ -25,7 +25,7 @@
                 <li class="splide__slide">
                     <img src="{{ url('images/splide/landing-page/hero-slide-4.png') }}" class="d-block w-100"
                         style="border-radius:8px;">
-                </li>
+                </li>-->
             </ul>
         </div>
     </section>
@@ -35,28 +35,28 @@
         <div class="container py-2">
             <div class="row">
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/1.png') }}" class="img-fluid"
-                            alt="Bluehost logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/7.png') }}" class="img-fluid"
+                            alt="Gofood logo" /></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/2.png') }}" class="img-fluid"
-                            alt="Hostgator logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/8.png') }}" class="img-fluid"
+                            alt="Shopeefood logo" /></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/3.png') }}" class="img-fluid"
-                            alt="Green Geeks logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/9.png') }}" class="img-fluid"
+                            alt="Grabfood logo" /></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/4.png') }}" class="img-fluid"
-                            alt="WordPress logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/10.png') }}" class="img-fluid"
+                            alt="Maxim logo" /></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/5.png') }}" class="img-fluid"
-                            alt="DreamHost logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/11.png') }}" class="img-fluid"
+                            alt="Traveloka logo" /></a>
                 </div>
                 <div class="col-lg-2 col-md-4 col-6">
-                    <a href="#"><img src="{{ url('images/logo/6.png') }}" class="img-fluid"
-                            alt="Hostinger logo" /></a>
+                    <a href="#"><img src="{{ url('images/logo/12.png') }}" class="img-fluid"
+                            alt="Oyo logo" /></a>
                 </div>
             </div>
         </div>
@@ -93,7 +93,7 @@
                                     </div>
                                 </div>
                             @empty
-                                <p>gak ada menu euy</p>
+                                <p>Belum ada menu bray</p>
                             @endforelse
                         </div>
                     </div>
@@ -184,14 +184,14 @@
         <div class="container">
             <div class="text-center mb-5">
                 <small class="text-warning fw-bold text-uppercase">Kategori Makanan Yang Tersedia di
-                    Restawrant</small>
+                    Restawuran</small>
                 <h1 class="fw-bold">Kategori Makanan & Minuman</h1>
                 <p>Mau cari minuman, makanan, dessert atau oleh oleh ada kategorinya nih</p>
             </div>
             <div class="row g-3">
                 @forelse ($categories as $cat)
                     <div class="col-md-4 col-lg-3">
-                        <div class="card card-in-home bg-warning text-white text-center">
+                        <div class="card card-in-home bg-warning text-dark text-center">
                             <img class="card-img-top card-img-top-category-landing-page"
                                 src="{{ Storage::url($cat->image) }}" alt="" srcset="">
                             <div class="card-body">
@@ -202,7 +202,7 @@
                                     </p>
                                 </div>
                                 <a href="{{ route('categories.show', $cat->id) }}"
-                                    class="btn btn-outline-light fs-12">Lihat Semua &nbsp;
+                                    class="btn btn-outline-dark fs-12">Lihat Semua &nbsp;
                                     <small class="arrow-category-button">→</small></a>
                             </div>
                         </div>
@@ -280,31 +280,37 @@
             <div class="text-center mb-5">
                 <small class="text-warning fw-bold text-uppercase">Foto dan Dokumentasi di outlet kami</small>
                 <h1 class="fw-bold">Galeri & Dokumentasi di Outlet</h1>
-                <p>Buat kalian yang penasaran sama tempatnya kayak gimana tapi tempatnya nyaman kok hehe</p>
+                <p>Buat kalian yang penasaran sama tempatnya kayak gimana tapi tempatnya nyaman kok hehehe</p>
             </div>
             <div class="row">
                 <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/572925073777638b2481530002052b31.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 1" />
 
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain1.webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Wintry Mountain Landscape" />
+                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/1-11.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 2" />
+
+                        <img src="https://cdn.pergidulu.com/wp-content/uploads/2022/02/Coffee-Shop-Baru-di-Bandung-2022.jpeg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain2.webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Mountains in the Clouds" />
+                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/5-12.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 3" />
 
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(73).webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Boat on Calm Water" />
+                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/6-5.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 4" />
                 </div>
 
                 <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/Nature/4-col/img%20(18).webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Waves at Sea" />
+                    <img src="https://ds393qgzrxwzn.cloudfront.net/resize/m720x480/cat1/img/images/0/zWTVqgzGpF.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee 1" />
 
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Vertical/mountain3.webp"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Yosemite National Park" />
+                    <img src="https://awsimages.detik.net.id/community/media/visual/2021/09/24/5-coffee-shop-di-bandung-ini-cocok-buat-nyantai-dan-foto-ootd_43.jpeg?w=1200"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee Shop" />
+
+                        <img src="https://assets-pergikuliner.com/INR3DyV2wQorTbhu2wVbT1DzMQo=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/bootsy/image/19193/coffee_shop_di_puri.jpg"
+                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee 2" />
                 </div>
             </div>
         </div>
@@ -323,7 +329,7 @@
                     <div class="swiper testimonial-swiper">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="card card-in-home bg-warning text-white">
+                                <div class="card card-in-home bg-warning text-black">
                                     <div class="card-body">
                                         <h5 class="card-title lh-lg">⭐⭐⭐⭐⭐</h5>
                                         <h5 class="card-title lh-lg fw-bold">
@@ -341,16 +347,16 @@
                                             </div>
                                             <div class="col-10 col-md-10 my-auto">
                                                 <p class="mb-0 fw-bold">
-                                                    Syauqizaidan Khairan Khalaf
+                                                    Ali
                                                 </p>
-                                                <small>Tukang tidur, 18 tahun</small>
+                                                <small>Orang Gabut, 27 tahun</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card card-in-home bg-warning text-white">
+                                <div class="card card-in-home bg-warning text-black">
                                     <div class="card-body">
                                         <h5 class="card-title lh-lg">⭐⭐⭐⭐⭐</h5>
                                         <h5 class="card-title lh-lg fw-bold">
@@ -368,16 +374,16 @@
                                             </div>
                                             <div class="col-10 col-md-10 my-auto">
                                                 <p class="mb-0 fw-bold">
-                                                    Conrad Aditya Veranda
+                                                    Maurizka
                                                 </p>
-                                                <small>Tukang genshin, 18 tahun</small>
+                                                <small>Si Cantik, 25 tahun</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                             <div class="swiper-slide">
-                                <div class="card card-in-home bg-warning text-white">
+                                <div class="card card-in-home bg-warning text-black">
                                     <div class="card-body">
                                         <h5 class="card-title lh-lg">⭐⭐⭐⭐⭐</h5>
                                         <h5 class="card-title lh-lg fw-bold">
@@ -395,9 +401,9 @@
                                             </div>
                                             <div class="col-10 col-md-10 my-auto">
                                                 <p class="mb-0 fw-bold">
-                                                    Andhika Febriansyah
+                                                    Lutfhi
                                                 </p>
-                                                <small>Tukang bucin, 18 tahun</small>
+                                                <small>Tukang Tidur, 27 tahun</small>
                                             </div>
                                         </div>
                                     </div>
@@ -414,13 +420,13 @@
     <section>
         <div class="container mb-5">
             <div class="row rounded mx-auto " style="background-color: #fcca29">
-                <div class="col-md-7 my-auto text-white px-5 py-5">
-                    <h2 class="fw-bold text-white">Jangan lewatkan promo dari kami</h2>
+                <div class="col-md-7 my-auto text-black px-5 py-5">
+                    <h2 class="fw-bold text-black">Jangan lewatkan promo dari kami !!!</h2>
                     <p>
                         Pastikan kalian follow instagram dan twitter kami untuk informasi terkait promo, event, menu
                         baru atau giveaway bagi kalian para restawvers di seluruh Indonesia!
                     </p>
-                    <a href='#' target="_blank" class="btn btn-outline-light mt-2 px-4 py-2"
+                    <a href='#' target="_blank" class="btn btn-outline-dark mt-2 px-4 py-2"
                         style="font-weight:500;">Follow Instagram
                         ⇾</a>
                 </div>
