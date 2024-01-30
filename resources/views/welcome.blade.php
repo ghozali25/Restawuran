@@ -78,17 +78,17 @@
                             @forelse ($menus as $menu)
                                 <div class="swiper-slide">
                                     <div class="card">
-                                        <img src="{{ Storage::url($menu->image) }}"
-                                            class="card-img-top card-img-top-landing-page" />
+                                    <img src="{{ Storage::url($menu->image) }}" alt="Menu Image" max-width="200" max-height="100"
+                                            class="card-img-top card-img-top-landing-page">
                                         <div class="card-body">
                                             <h5 class="card-title fw-bold"> {{ $menu->name }}</h5>
                                             <div class="category-card-description-wrapper">
-                                                <p class="card-text category-card-description" style="font-size: 13px;">
+                                                <p class="card-text category-card-description" style="font-size: 15px;">
                                                     {{ $menu->description }}
                                                 </p>
                                             </div>
                                             <hr>
-                                            <h5 class="fw-semibold">Rp.{{ $menu->price }}.000,00</h5>
+                                            <h5 class="fw-semibold">Rp.{{ $menu->price }}.000,-</h5>
                                         </div>
                                     </div>
                                 </div>
@@ -215,7 +215,7 @@
     </section>
 
     <!-- ------------------------ #2 Feature Section ------------------------ -->
-    <section class="my-100">
+   <!--<section class="my-100">
         <div class="container">
             <div class="row">
                 <div
@@ -262,9 +262,9 @@
                   ">
                     <img src="{{ url('images/landing-page/video.png') }}"
                         class="img-fluid shadow-images img-video" />
-                    <!-- The overlay area -->
+                    
                     <div class="container__overlay">
-                        <!-- The player button -->
+                         The player button 
                         <a target="_blank" href="https://www.youtube.com/">
                             <i class="fas fa-play-circle text-white play-button"></i>
                         </a>
@@ -272,7 +272,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- ------------------------ Gallery Pictures Section ------------------------ -->
     <section class="my-100" id="galeri-outlet">
@@ -280,39 +280,35 @@
             <div class="text-center mb-5">
                 <small class="text-warning fw-bold text-uppercase">Foto dan Dokumentasi di outlet kami</small>
                 <h1 class="fw-bold">Galeri & Dokumentasi di Outlet</h1>
-                <p>Buat kalian yang penasaran sama tempatnya kayak gimana tapi tempatnya nyaman kok hehehe</p>
+                <p>Buat kalian yang penasaran sama tempatnya kayak gimana, tempatnya nyaman kok hehehe</p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/572925073777638b2481530002052b31.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 1" />
+                <div class="row">
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="https://interiordesign.id/wp-content/uploads/2023/07/572925073777638b2481530002052b31.jpg"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 1" style="max-width: 500px; max-height: 300px;" />
 
-                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/1-11.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 2" />
+                        <img src="https://interiordesign.id/wp-content/uploads/2023/07/1-11.jpg"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 2" style="max-width: 500px; max-height: 300px;" />
+                    </div>
 
-                        <img src="https://cdn.pergidulu.com/wp-content/uploads/2022/02/Coffee-Shop-Baru-di-Bandung-2022.jpeg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee" />
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="https://interiordesign.id/wp-content/uploads/2023/07/5-12.jpg"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 3" style="max-width: 400px; max-height: 280px;" />
+
+                        <img src="https://interiordesign.id/wp-content/uploads/2023/07/6-5.jpg"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 4" style="max-width: 400px; max-height: 280px;" />
+                    </div>
+
+                    <div class="col-lg-4 mb-4 mb-lg-0">
+                        <img src="https://ds393qgzrxwzn.cloudfront.net/resize/m720x480/cat1/img/images/0/zWTVqgzGpF.jpg"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Coffee 1" style="max-width: 500px; max-height: 300px;" />
+
+                        <img src="https://awsimages.detik.net.id/community/media/visual/2021/09/24/5-coffee-shop-di-bandung-ini-cocok-buat-nyantai-dan-foto-ootd_43.jpeg?w=1200"
+                            class="w-100 shadow-1-strong rounded mb-4" alt="Coffee Shop" style="max-width: 500px; max-height: 300px;" />
+                    </div>
                 </div>
 
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/5-12.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 3" />
 
-                    <img src="https://interiordesign.id/wp-content/uploads/2023/07/6-5.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Outdoor 4" />
-                </div>
-
-                <div class="col-lg-4 mb-4 mb-lg-0">
-                    <img src="https://ds393qgzrxwzn.cloudfront.net/resize/m720x480/cat1/img/images/0/zWTVqgzGpF.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee 1" />
-
-                    <img src="https://awsimages.detik.net.id/community/media/visual/2021/09/24/5-coffee-shop-di-bandung-ini-cocok-buat-nyantai-dan-foto-ootd_43.jpeg?w=1200"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee Shop" />
-
-                        <img src="https://assets-pergikuliner.com/INR3DyV2wQorTbhu2wVbT1DzMQo=/fit-in/1366x768/smart/filters:no_upscale()/https://assets-pergikuliner.com/uploads/bootsy/image/19193/coffee_shop_di_puri.jpg"
-                        class="w-100 shadow-1-strong rounded mb-4" alt="Coffee 2" />
-                </div>
-            </div>
         </div>
     </section>
 
@@ -421,7 +417,7 @@
         <div class="container mb-5">
             <div class="row rounded mx-auto " style="background-color: #fcca29">
                 <div class="col-md-7 my-auto text-black px-5 py-5">
-                    <h2 class="fw-bold text-black">Jangan lewatkan promo dari kami !!!</h2>
+                    <h2 class="fw-bold text-black">Jangan lewatkan promo dari kami!</h2>
                     <p>
                         Pastikan kalian follow instagram dan twitter kami untuk informasi terkait promo, event, menu
                         baru atau giveaway bagi kalian para restawvers di seluruh Indonesia!

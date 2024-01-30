@@ -5,15 +5,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="title" content="Restawrant —  Admin Management Dashboard">
-    <meta name="description" content="  Restawrant adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
+    <meta name="title" content="Restawuran">
+    <meta name="description" content="  Restawuran adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
                         dessert dan lain lain dengan harga kaki lima namun rasanya bintang lima. Outlet kita selalu
                         rame, jadi jangan lupa reservasi ya!">
     <meta name="keywords" content="Restawrant, Open Source Restaurant Website">
-    <meta name="author" content="SYAUQIZAIDAN KHAIRAN KHALAF">
-    <link rel="icon" href="{{ url('cuba/assets/images/favicon.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ url('cuba/assets/images/icon-192.png') }}" type="image/x-icon">
-    <title>Masuk Aplikasi - Restawrant</title>
+    <meta name="author" content="Ahmad Ghozali">
+    <link rel="icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
+    <title>Masuk Aplikasi</title>
     @include('includes.backend.style')
 </head>
 

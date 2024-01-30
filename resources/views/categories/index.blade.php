@@ -43,7 +43,7 @@
                                     </p>
                                 </div>
                                 <a href="{{ route('categories.show', $category->id) }}"
-                                    class="text-white fs-12 btn btn-warning mt-3">Selengkapnya ⇾</a>
+                                    class="btn btn-warning btn-outline-light text-dark fs-12 fw-bold">Selengkapnya ⇾</a>
                             </div>
                         </div>
                     </div>

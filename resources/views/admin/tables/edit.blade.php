@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Edit Data Meja — Restawrant')
+@section('title', 'Edit Data Meja')
 @section('content')
 
     @push('create-article-styles')

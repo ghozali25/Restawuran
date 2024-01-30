@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Tambah Menu Baru — Restawrant')
+@section('title', 'Tambah Menu Baru')
 @section('content')
 
     @push('create-article-styles')

@@ -1,304 +1,395 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Admin Dashboard — Restawrant')
+@section('title', 'Dashboard')
 @section('content')
-
-    @push('datatable-styles')
-        <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/scrollable.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/datatables.css') }}">
-        <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/datatable-extension.css') }}">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.3.1/dist/css/splide.min.css">
-    @endpush
-
-    <div class="container-fluid">
-        <div class="row mb-4">
-            <div class="col-xl-12 col-12 mt-4">
-                <div class="splide"
-                    style="box-shadow:rgba(0, 0, 0, 0.05) 0px 0px 4px 0px, rgba(0, 0, 0, 0.1) 0px 4px 24px 0px; border-radius:8px;">
-                    <div class="splide__track">
-                        <ul class="splide__list">
-                            <li class="splide__slide">
-                                <img src="{{ url('images/splide/admin/announcement-dashboard-images-2.png') }}"
-                                    class="d-block w-100" style="border-radius:8px;">
-                            </li>
-                            <li class="splide__slide">
-                                <img src="{{ url('images/splide/admin/announcement-dashboard-images-3.png') }}"
-                                    class="d-block w-100" style="border-radius:8px;">
-                            </li>
-                        </ul>
+<div class="row">
+    <div class="col-md-12">
+        <div class="morning-sec">
+            <div class="card o-hidden profile-greeting">
+                <div class="card-body">
+                    <div class="media">
+                        <div class="badge-groups w-100 d-flex justify-content-center">
+                            <div class="badge f-18">
+                                <i class="mr-1" data-feather="clock"></i>
+                                <span id="txt"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="greeting-user text-center">
+                        <h4 class="f-w-100">
+                           <span id="greeting"></span>
+                        </h4>
+                        <p>
+                            <span>
+                                Selamat datang di halaman administrator Restawuran, disini anda dapat menambah menu,
+                                kategori, meja dan menambah reservasi.
+                            </span>
+                        </p>
                     </div>
                 </div>
             </div>
         </div>
-
-        {{-- <div class="row second-chart-list third-news-update">
-            <div class="col-xl-6 col-lg-12 xl-50 morning-sec box-col-12" style="height: 200">
-                <div class="card o-hidden profile-greeting">
-                    <div class="card-body">
-                        <div class="media">
-                            <div class="badge-groups w-100">
-                                <div class="badge f-12">
-                                    <i class="mr-1" data-feather="clock"></i>
-                                    <span id="txt"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="greeting-user text-center">
-                            <h4 class="f-w-600">
-                                <span id="greeting">Halo!</span>
-                            </h4>
-                            <p>
-                                <span>
-                                    Selamat datang di halaman administrator Restawuran, disini anda dapat menambah menu,
-                                    kategori, meja dan menambah reservasi.
-                                </span>
-                            </p>
-                            <div class="whatsnew-btn">
-
-                            </div>
-                        </div>
-                    </div>
+    </div>
+</div>
+<div class="row">
+        <!-- Chart 1 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title f-w-100 text-center">Reservasi</h5>
+                    <!-- Container for chart currently sale -->
+                    <div id="Reservationcount"></div>
                 </div>
             </div>
-
-            <div class="col-xl-6 col-lg-12 xl-50 calendar-sec box-col-6">
-                <div class="card gradient-primary o-hidden py-2">
-                    <div class="card-body">
-                        <div class="default-datepicker">
-                            <div class="datepicker-here" data-language="en"></div>
-                        </div>
-                        <span class="default-dots-stay overview-dots full-width-dots">
-                            <span class="dots-group">
-                                <span class="dots dots1">
-                                </span>
-                                <span class="dots dots2 dot-small">
-                                </span>
-                                <span class="dots dots3 dot-small">
-                                </span>
-                                <span class="dots dots4 dot-medium">
-                                </span>
-                                <span class="dots dots5 dot-small">
-                                </span>
-                                <span class="dots dots6 dot-small">
-                                </span>
-                                <span class="dots dots7 dot-small-semi">
-                                </span>
-                                <span class="dots dots8 dot-small-semi">
-                                </span>
-                                <span class="dots dots9 dot-small">
-                                </span>
-                            </span>
-                        </span>
-                    </div>
+        </div>
+        <!-- Chart 2 -->
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title f-w-100 text-center">Jadwal Reservasi</h5>
+                    <!-- Container for chart currently sale -->
+                    <div id="Reservationtime"></div>
                 </div>
-            </div> --}}
-
-        {{-- <div class="col-xl-4 xl-50 news box-col-6">
-                <div class="card">
-                    <div class="card-header">
-                        <div class="header-top">
-                            <h5 class="m-0">✅ • To-Do List</h5>
-                        </div>
-                    </div>
-                    <div class="card-body p-0">
-                        @forelse ($todolist as $item)
-                            <div class="news-update">
-                                <h6>{{ $item->nama_tugas }}</h6>
-                                <a href="{{ route('todolist.done', $item->id) }}">
-                                    Tandai sebagai selesai ✔
-                                </a>
-                            </div>
-                        @empty
-                            <div class="news-update">
-                                <img src="{{ url('images/illustrations/todo-list.png') }}" class="img-fluid">
-                            </div>
-                        @endforelse
-                    </div>
-                    <div class="card-footer">
-                        <div class="bottom-btn">
-                            <a href="{{ url('/dashboard/todolist') }}">Lihat semua todolist ...</a>
-                        </div>
-                    </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-body">
+                <h5 class="card-title f-w-100 text-center">Menu</h5>
+                    <!-- Container for chart currently sale -->
+                    <div id="pie"></div>
                 </div>
-            </div> --}}
+            </div>
+        </div>
+</div>
 
-        {{-- <div class="col-xl-4 xl-50 appointment-sec box-col-6">
-                <div class="row">
-                    <div class="col-xl-12 appointment">
-                        <div class="card">
-                            <div class="card-header">
-                                <div class="header-top">
-                                    <h5 class="m-0">📝 • Catatanmu</h5>
-                                </div>
-                            </div>
-                            <div class="card-body py-3">
-                                <div class="appointment-table table-responsive">
-                                    <table class="table">
-                                        <tbody>
-                                            @forelse ($catatan as $item)
+<div class="row">
+    <div class="col-sm-12">        
+        <div class="card">
+            <div class="card-body">
+            <h5 style="text-align: center;">Data Reservasi</h5>
+                <div class="dt-ext table-responsive">
+                                        <table class="display" id="auto-fill">
+                                            <thead>
                                                 <tr>
-                                                    <td class="font-weight-bold">
-                                                        <div class="d-flex py-1 align-items-center">
-                                                            <div class="flex-fill">
-                                                                <div class="font-weight-bold">{{ $item->judul }}</div>
-                                                                <div class="text-muted"><a href="#"
-                                                                        class="text-reset">{{ $item->matkul }}</a>
+                                                    <th>Nama</th>
+                                                    <th>Tanggal</th>
+                                                    <th>Tamu</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                @forelse ($reservationDetails as $item)
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex py-1 align-items-center">
+                                                                <div class="avatars mr-2">
+                                                                    <div class="avatar ratio">
+                                                                        <img style="object-fit: cover; width: 40px; height: 40px;"
+                                                                            class="b-r-8"
+                                                                            src="https://ui-avatars.com/api/?background=4466f2&color=fff&name={{ $item->first_name }}">
+                                                                    </div>
+                                                                </div>
+                                                                <div class="flex-fill">
+                                                                    <div class="font-weight-bold">{{ ucwords($item->first_name) }} {{ ucwords($item->last_name) }}</div>
+                                                                    <div class="text-muted">
+                                                                        <a href="#" class="text-reset">{{ $item->email }} || {{ $item->tel_number }}</a>
+                                                                    </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
-                                                    </td>
-
-                                                    <td class="text-right">
-                                                        <a href="{{ route('notes.show', $item->id) }}">
-                                                            <div class="button btn btn-primary">Lihat</div>
-                                                        </a>
-                                                    </td>
-                                                </tr>
-                                            @empty
-                                                <tr>
-                                                    <td>
-                                                        <h6>Kamu belum buat catatan, <a href="#">buat sekarang ⇾</a></h6>
-                                                    </td>
-                                                </tr>
-                                            @endforelse
-                                        </tbody>
-                                        <tfoot>
-                                            <tr>
-                                                <th class="ml-0 pl-0 py-2 text-left" style="border-top:none;">
-                                                    <a href="{{ url('/dashboard/catatan-pelajaran') }}"> Lihat semua ...
-                                                    </a>
-                                                </th>
-                                            </tr>
-                                        </tfoot>
-                                    </table>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-12 alert-sec">
-                        <div class="card bg-img">
-                            <div class="card-header">
-                                <div class="header-top">
-                                    <h5 class="m-0">Butuh Bantuanmu</h5>
-                                    <div class="dot-right-icon">
-                                        <i class="fa fa-share"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <div class="body-bottom">
-                                    <h6>Jangan lupa untuk share dan ajak temanmu!</h6>
-                                    <span class="font-roboto">
-                                        Ajak temanmu menggunakan collegetivity dan share ke sosial media biar bisa bantu
-                                        teman teman mahasiswa yang lain juga, ya!
-                                    </span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
-
-
-
-        <div class="row">
-            <div class="col-sm-12">
-                <div class="card">
-                    <div class="card-header">
-                        <h5>📅 • Jadwal Reservasi</span>
-                    </div>
-                    <div class="card-body">
-                        <div class="dt-ext table-responsive">
-                            <table class="display" id="auto-fill">
-                                <thead>
-                                    <tr>
-                                        <th>Nama Pelanggan</th>
-                                        <th>Tanggal</th>
-                                        <th>Meja</th>
-                                        <th>Jumlah Tamu</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @forelse ($reservations as $item)
-                                        <tr>
-                                            <td>
-                                                <div class="d-flex py-1 align-items-center">
-                                                    <div class="avatars mr-2">
-                                                        <div class="avatar ratio">
-                                                            <img style="object-fit: cover;
-                                                                                                                    width: 40px;
-                                                                                                                    height: 40px;"
-                                                                class="b-r-8"
-                                                                src="https://ui-avatars.com/api/?background=4466f2&color=fff&name={{ $item->first_name }}">
-                                                        </div>
-                                                    </div>
-                                                    <div class="flex-fill">
-                                                        <div class="font-weight-bold"> {{ $item->first_name }}
-                                                            {{ $item->last_name }}</div>
-                                                        <div class="text-muted">
-                                                            <a href="#" class="text-reset">{{ $item->email }}</a>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>{{ $item->res_date }}</td>
-                                            <td>({{ $item->table->name }})</td>
-                                            <td>{{ $item->guest_number }}</td>
-
-                                        </tr>
-                                    @empty
-                                    @endforelse
-                                </tbody>
-                                <tfoot>
-                                    <tr>
-                                        <th>Nama Pelanggan</th>
-                                        <th>Tanggal</th>
-                                        <th>Meja</th>
-                                        <th>Jumlah Tamu</th>
-                                    </tr>
-                                </tfoot>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+                                                        </td>
+                                                        <td>{{ $item->res_date }}</td>
+                                                        <td>{{ $item->guest_number }}</td>
+                                                        <td>
+                                                            <!-- Your action buttons here -->
+                                                        </td>
+                                                    </tr>
+                                                @empty
+                                                    <tr>
+                                                        <td colspan="5">No reservation details available</td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                            
+                                        </table>
+                </div>     
             </div>
         </div>
+</div>
 
-    </div>
 
-    </div>
 
-    @push('datatable-scripts')
-        <script src="{{ url('cuba/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.buttons.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/jszip.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.colVis.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/pdfmake.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/vfs_fonts.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.autoFill.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.select.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.html5.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.print.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.responsive.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.keyTable.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.colReorder.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.scroller.min.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/datatable/datatable-extension/custom.js') }}"></script>
-        <script src="{{ url('cuba/assets/js/tooltip-init.js') }}"></script>
-        <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.3.1/dist/js/splide.min.js"></script>
+    
+
+            
+
+        @push('datatable-scripts')
         <script>
-            new Splide('.splide', {
-                autoplay: 'playing',
-                rewind: true,
-                arrows: false,
-                interval: 2000,
-            }).mount();
-        </script>
-    @endpush
+                        // greeting
+            var today = new Date();
+            var curHr = today.getHours();
 
+            if (curHr >= 0 && curHr < 4) {
+                document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Beristirahat 💤";
+            } else if (curHr >= 4 && curHr < 12) {
+                document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Pagi 🌄";
+            } else if (curHr >= 12 && curHr < 16) {
+                document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Siang ☀";
+            } else {
+                document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Malam 🌙";
+            }
+
+            // time
+            function startTime() {
+                var today = new Date();
+                var h = today.getHours();
+                var m = today.getMinutes();
+                // var s = today.getSeconds();
+
+                h = checkTime(h);
+                m = checkTime(m);
+                // s = checkTime(s);
+
+                document.getElementById("txt").innerHTML = h + ":" + m;
+                var t = setTimeout(startTime, 500);
+            }
+
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                } // add zero in front of numbers < 10
+                return i;
+            }
+
+            startTime(); // Call startTime once to display the initial time
+        </script>
+        
+        <!-- Pie Chart -->
+        <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var options = {
+                            series: {!! json_encode($menuCounts) !!},
+                            chart: {
+                                type: 'pie',
+                                height: 220,
+                                toolbar: {
+                                    show: false
+                                },
+                            },
+                            labels: {!! json_encode($categoryNames) !!},
+                            legend: {
+                                position: 'bottom',
+                            },
+                            plotOptions: {
+                                pie: {
+                                    dataLabels: {
+                                        offset: -12,
+                                        minAngleToShowLabel: 10,
+                                        style: {
+                                            colors: [CubaAdminConfig.primary],
+                                        },
+                                        formatter: function (val, opts) {
+                                            return opts.w.config.series[opts.seriesIndex] + ': ' + val;
+                                        },
+                                    },
+                                },
+                            },
+                        };
+
+                        var chart = new ApexCharts(document.querySelector("#pie"), options);
+                        chart.render();
+                    });
+                </script>
+
+                <!-- Bar Chart -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        var options = {
+                            series: [
+                                {
+                                    name: "Reservation",
+                                    data: {!! json_encode($reservationData->pluck('reservation_count')->map(function($count) { return round($count, 0); })) !!},
+                                },
+                            ],
+                            chart: {
+                                height: 200,
+                                type: "bar",
+                                toolbar: {
+                                    show: false,
+                                },
+                            },
+                            plotOptions: {
+                                bar: {
+                                dataLabels: {
+                                    position: 'top', // top, center, bottom
+                                },
+
+                                columnWidth: '15%',
+                                startingShape: 'rounded',
+                                endingShape: 'rounded'
+                                }
+                            },
+                            dataLabels: {
+                                enabled: true,
+                            },
+                            stroke: {
+                                curve: "smooth",
+                            },
+                            xaxis: {
+                                type: "Month",
+                                show: true,
+                                categories: {!! json_encode($reservationData->pluck('month')) !!},
+                                labels: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: true,
+                                },
+                                axisBorder: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: false,
+                                },
+                            },
+                            markers: {
+                                strokeWidth: 3,
+                                colors: "#ffffff",
+                                strokeColors: [CubaAdminConfig.primary],
+                                hover: {
+                                    size: 6,
+                                },
+                            },
+                            yaxis: {
+                                low: 0,
+                                max: 10, //tergantung mejanya ada berapa
+                                offsetX: 0,
+                                offsetY: 0,
+                                show: true,
+                                labels: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: true,
+                                },
+                                axisBorder: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: true,
+                                },
+                            },
+                            grid: {
+                                show: true,
+                                padding: {
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    top: 0,
+                                },
+                            },
+                            colors: [CubaAdminConfig.primary],
+                            legend: {
+                                show: true,
+                            },
+                        };
+                        var chart = new ApexCharts(document.querySelector("#Reservationcount"), options);
+                        chart.render();
+                    });
+                </script>
+
+                <!-- high_reservation_time -->
+                <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                        var options = {
+                            series: [
+                                {
+                                    name: "Reservation",
+                                    data: {!! json_encode($reservationData->pluck('reservation_count')->map(function($count) { return round($count, 0); })) !!},
+                                },
+                            ],
+                            chart: {
+                                height: 200,
+                                type: "bar",
+                                toolbar: {
+                                    show: false,
+                                },
+                            },
+                            plotOptions: {
+                                bar: {
+                                    dataLabels: {
+                                        position: 'top', // top, center, bottom
+                                    },
+                                    columnWidth: '10%',
+                                    startingShape: 'rounded',
+                                    endingShape: 'rounded'
+                                }
+                            },
+
+                            stroke: {
+                                curve: "smooth",
+                            },
+                            xaxis: {
+                                type: 'category',
+                                categories: {!! json_encode($reservationData->pluck('high_reservation_time')) !!},
+                                labels: {
+                                    show: true,
+                                },
+                            },
+                            yaxis: {
+                                low: 0,
+                                max: 10,
+                                offsetX: 0,
+                                offsetY: 0,
+                                show: true,
+                                labels: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: true,
+                                },
+                                axisBorder: {
+                                    low: 0,
+                                    offsetX: 0,
+                                    show: true,
+                                },
+                            },
+                            grid: {
+                                show: true,
+                                padding: {
+                                    left: 0,
+                                    right: 0,
+                                    bottom: 0,
+                                    top: 0,
+                                },
+                            },
+                            colors: [CubaAdminConfig.primary], // Add a color for High Reservation Time
+                            legend: {
+                                show: false,
+                            },
+                        };
+                        var chart = new ApexCharts(document.querySelector("#Reservationtime"), options);
+                        chart.render();
+                        });
+                    </script>
+
+
+
+
+            <script src="{{ url('cuba/assets/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.buttons.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.colVis.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/pdfmake.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/vfs_fonts.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.autoFill.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.select.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.bootstrap4.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.html5.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/buttons.print.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.bootstrap4.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.responsive.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/responsive.bootstrap4.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.keyTable.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.colReorder.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.fixedHeader.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.rowReorder.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/dataTables.scroller.min.js') }}"></script>
+            <script src="{{ url('cuba/assets/js/datatable/datatable-extension/custom.js') }}"></script>
+            <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/datatables.css') }}">
+            <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/datatable-extension.css') }}">
+            @endpush
 @endsection

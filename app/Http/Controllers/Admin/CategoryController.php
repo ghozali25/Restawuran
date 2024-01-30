@@ -114,3 +114,5 @@ class CategoryController extends Controller
         return to_route('admin.categories.index')->with('danger', 'Category deleted successfully.');
     }
 }
+
+

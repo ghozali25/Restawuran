@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jan 21, 2024 at 03:29 PM
+-- Generation Time: Jan 22, 2024 at 12:07 AM
 -- Server version: 10.6.12-MariaDB-0ubuntu0.22.04.1
 -- PHP Version: 8.1.2-1ubuntu2.14
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `restawrant`
+-- Database: `restawuran`
 --
 
 -- --------------------------------------------------------
@@ -64,7 +64,10 @@ CREATE TABLE `category_menu` (
 INSERT INTO `category_menu` (`category_id`, `menu_id`) VALUES
 (3, 1),
 (3, 2),
-(3, 3);
+(3, 3),
+(1, 4),
+(4, 5),
+(2, 6);
 
 -- --------------------------------------------------------
 
@@ -105,7 +108,10 @@ CREATE TABLE `menus` (
 INSERT INTO `menus` (`id`, `name`, `description`, `image`, `price`, `created_at`, `updated_at`) VALUES
 (1, 'Coffee Susu', 'Kopi Susu', 'public/menus/lAUOIUXt7Ox0ZkUpaEeLH5Xu790MDmURPT5aUeyy.jpg', 15, '2024-01-18 05:44:25', '2024-01-18 05:49:04'),
 (2, 'Espresso', 'Kopi Espresso', 'public/menus/O09spo888QXXfD9RY2yNMG0coYsui6hLvc8aTkZr.jpg', 20, '2024-01-18 05:47:44', '2024-01-21 01:07:09'),
-(3, 'Americano', 'Kopi Americano', 'public/menus/fAxlPsjRcafPdgG9S11ozO09v1SXBBrx07J47qe3.jpg', 20, '2024-01-18 05:48:28', '2024-01-21 01:06:58');
+(3, 'Americano', 'Kopi Americano', 'public/menus/fAxlPsjRcafPdgG9S11ozO09v1SXBBrx07J47qe3.jpg', 20, '2024-01-18 05:48:28', '2024-01-21 01:06:58'),
+(4, 'Pasta Carbonara', 'Carbonara', 'public/menus/T34EyhrH0koPK9To6VEwx4DxqJHBh9hsOwA6cJa8.jpg', 25, '2024-01-21 07:37:35', '2024-01-21 07:37:35'),
+(5, 'Croffles', 'Croffles', 'public/menus/JCp7fr2CBYuyPoN3WvfjJdgkEFbdxl9wiscBJhu9.jpg', 15, '2024-01-21 07:40:34', '2024-01-21 07:40:34'),
+(6, 'Milk Tea', 'Milk Tea With Boba', 'public/menus/MNuhdEi8OyZw7LmygT6GrWcLssY1rtMaWVr1CB0P.jpg', 15, '2024-01-21 07:42:48', '2024-01-21 07:42:48');
 
 -- --------------------------------------------------------
 
@@ -329,7 +335,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `menus`
 --
 ALTER TABLE `menus`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `migrations`

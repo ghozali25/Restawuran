@@ -18,5 +18,7 @@
         "postcss": "^8.4.6",
         "postcss-import": "^14.0.2"
     },
-    "dependencies": {}
+    "dependencies": {
+        "chart.js": "^4.4.1"
+    }
 }

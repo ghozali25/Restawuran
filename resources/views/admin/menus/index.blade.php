@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Katalog Menu Makanan & Minuman — Restawrant')
+@section('title', 'Katalog Menu')
 @section('content')
 
     @push('datatable-styles')

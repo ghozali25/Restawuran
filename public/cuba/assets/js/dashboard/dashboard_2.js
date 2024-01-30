@@ -15,7 +15,6 @@ var options4 = {
       hollow: {
         margin: 5,
         size: '60%',
-        image: '../assets/images/dashboard-2/radial-image.png',
         imageWidth: 140,
         imageHeight: 140,
         imageClipped: false,
@@ -279,13 +278,13 @@ chart2.render();
 // month total
 var options3 = {
   series: [{
-    name: 'Inflation',
-    data: [2.3, 5.1, 3.0, 9.1, 2.0, 4.6, 2.2, 9.3, 5.4, 4.8, 3.5, 5.2]
+    name: 'High Reservation',
+    data: [17, 19, 12, 20, 19, 9, 15, 16, 20, 14, 22, 17]
   }],
   chart: {
-    height: 105,
+    height: 200,
     type: 'bar',
-    stacked: true,
+    stacked: false,
     toolbar: {
       show: false
     },
@@ -296,7 +295,7 @@ var options3 = {
         position: 'top', // top, center, bottom
       },
 
-      columnWidth: '20%',
+      columnWidth: '50%',
       startingShape: 'rounded',
       endingShape: 'rounded'
     }
@@ -305,9 +304,9 @@ var options3 = {
     enabled: false,
 
     formatter: function (val) {
-      return val + "%";
+      return val + ":00";
     },
-    offsetY: -10,
+    offsetY: 0,
     style: {
       fontSize: '12px',
       colors: [ CubaAdminConfig.primary ]
@@ -315,21 +314,21 @@ var options3 = {
   },
 
   xaxis: {
-    categories: ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+    categories: ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],
     position: 'bottom',
 
     axisBorder: {
       show: false
     },
     axisTicks: {
-      show: false
+      show: true
     },
     crosshairs: {
       fill: {
         type: 'gradient',
         gradient: {
           colorFrom: '#7366ff',
-          colorTo: '#c481ec',
+          colorTo: '#fff',
           stops: [0, 100],
           opacityFrom: 0.4,
           opacityTo: 0.5,
@@ -340,7 +339,7 @@ var options3 = {
       enabled: true,
     },
     labels: {
-      show: false
+      show: true
     }
 
   },
@@ -352,20 +351,20 @@ var options3 = {
       show: false,
     },
     labels: {
-      show: false,
+      show: true,
       formatter: function (val) {
-        return val + "%";
+        return val + ":00";
       }
     }
 
   },
   grid: {
-    show: false,
+    show: true,
     padding: {
-      top: -35,
-      right: -45,
-      bottom: -20,
-      left: -10
+      top: -10,
+      right: 0,
+      bottom: -15,
+      left: 0
     },
   },
   colors: [ CubaAdminConfig.primary ],
@@ -377,9 +376,3 @@ var chart3 = new ApexCharts(document.querySelector("#column-chart"),
 );
 
 chart3.render();
-
-
-
-
-
-

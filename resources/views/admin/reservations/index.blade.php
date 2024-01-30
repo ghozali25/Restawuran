@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Data Reservasi — Restawrant')
+@section('title', 'Data Reservasi')
 @section('content')
 
     @push('datatable-styles')
@@ -17,7 +17,7 @@
                 </div>
                 <div class="card-body">
                     <p>
-                        Dibawah ini adalah data kategori makanan dan minuman yang telah anda buat. <span
+                        Dibawah ini adalah data reservasi yang telah anda buat atau customer input. <span
                             class="d-none d-md-inline">
                             Catatan dibawah juga bisa kamu edit dengan menekan logo
                             pencil
@@ -31,12 +31,14 @@
             </div>
         </div>
 
+        
         <div class="row">
             <div class="col-sm-12">
                 <div class="card">
                     <div class="card-body">
                         <div class="dt-ext table-responsive">
                             <table class="display" id="auto-fill">
+                                
                                 <thead>
                                     <tr>
                                         <th>Nama</th>
@@ -61,10 +63,9 @@
                                                         </div>
                                                     </div>
                                                     <div class="flex-fill">
-                                                        <div class="font-weight-bold">{{ $item->first_name }}
-                                                            {{ $item->last_name }}</div>
+                                                        <div class="font-weight-bold">{{ ucwords($item->first_name) }} {{ ucwords($item->last_name) }}</div>
                                                         <div class="text-muted">
-                                                            <a href="#" class="text-reset">{{ $item->email }}</a>
+                                                            <a href="#" class="text-reset">{{ $item->email }} || {{ $item->tel_number }}</a>
                                                         </div>
                                                     </div>
                                                 </div>

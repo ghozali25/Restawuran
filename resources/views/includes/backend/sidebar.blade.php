@@ -12,12 +12,13 @@
                     </div>
                 </li>
 
-                <li class="sidebar-main-title pt-0">
+                <li class="sidebar-main-title pt-0 text-center" style="color: dark;">
                     <div>
-                        <h6>Halaman Utama</h6>
+                        <h6><b>Halaman Utama</b></h6>
                         <p>Dashboard & Overview</p>
                     </div>
                 </li>
+
 
                 <li class="sidebar-list">
                     <a class="sidebar-link sidebar-title link-nav" href="{{ url('admin') }}">
@@ -26,12 +27,12 @@
                     </a>
                 </li>
 
-                <li class="sidebar-main-title">
+                <!--<li class="sidebar-main-title">
                     <div>
                         <h6>Kelola Kategori & Menu</h6>
                         <p>Data Kategori & Menu</p>
                     </div>
-                </li>
+                </li>-->
 
                 <li class="sidebar-list">
                     <a class="sidebar-link sidebar-title" href="#">
@@ -41,12 +42,12 @@
                     <ul class="sidebar-submenu">
                         <li class="active">
                             <a href="{{ url('/admin/categories') }}">
-                                Data Kategori Makanan
+                                Data Kategori Produk
                             </a>
                         </li>
                         <li>
                             <a href="{{ url('/admin/categories/create') }}">
-                                Tambah Kategori Makanan / Minuman
+                                Tambah Kategori Produk
                             </a>
                         </li>
                     </ul>
@@ -72,22 +73,22 @@
                 </li>
 
 
-                <li class="sidebar-main-title">
+                <!--<li class="sidebar-main-title">
                     <div>
                         <h6>Kelola Meja & Reservasi</h6>
                         <p>Data Meja & Reservasi</p>
                     </div>
-                </li>
+                </li>-->
 
                 <li class="sidebar-list">
                     <a class="sidebar-link sidebar-title" href="#">
                         <i data-feather="users"></i>
-                        <span>Data Meja Restawrant</span>
+                        <span>Data Meja</span>
                     </a>
                     <ul class="sidebar-submenu">
                         <li>
                             <a href="{{ url('/admin/tables') }}">
-                                Daftar Meja di Restawrant
+                                Daftar Meja
                             </a>
                         </li>
                         <li>
@@ -111,7 +112,7 @@
                         </li>
                         <li>
                             <a href="{{ url('/admin/reservations/create') }}">
-                                Tambah Jadwal Reservasi Baru
+                                Tambah Reservasi Baru
                             </a>
                         </li>
                     </ul>

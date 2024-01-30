@@ -28,10 +28,11 @@ Website ini berperan sebagai homepage untuk menampilkan menu dan kategori makana
 
 Berikut adalah daftar akun untuk keperluan testing saat anda mencoba aplikasi pertama kali, nemun anda harus melakukan seed terlebih dahulu dengan panduan dibawah
 
-| Role      | Email             | Password    | URL                                        |
-| --------- | ----------------- | ----------- | ------------------------------------------ |
-| Admin     | admin@gmail.com   | password    | http://localhost:8000/admin                |
-
+------------------------------------------------------------------------------
+|   Role    |       Email       |   Password  |             URL              |
+| --------- | ----------------- | ----------- | ---------------------------- |
+|   Admin   |  admin@gmail.com  |   password  | http://localhost:8000/login  |
+------------------------------------------------------------------------------
 
 <p></p>
 
@@ -51,7 +52,7 @@ Untuk menjalankan aplikasi atau web ini kamu harus install XAMPP atau web server
 
 ```bash
 # Clone repository ini atau download di
-$ git clone https://github.com/ghozali25/restawrant.git
+$ git clone https://github.com/ghozali25/restawuran.git
 
 # Kemudian jalankan command composer install, ini akan menginstall resources yang laravel butuhkan
 $ composer install

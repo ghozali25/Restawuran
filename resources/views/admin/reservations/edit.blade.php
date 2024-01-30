@@ -1,6 +1,6 @@
 @extends('layouts.backend.master')
 
-@section('title', 'Tambah Reservasi Baru — Restawrant')
+@section('title', 'Tambah Reservasi')
 @section('content')
 
     @push('create-article-styles')
@@ -8,18 +8,19 @@
         <link rel="stylesheet" type="text/css" href="{{ url('cuba/assets/css/vendors/dropzone.css') }}">
     @endpush
 
-    <div>
+        
         <!-- pages title header start-->
+        
         <div class="container-fluid">
             <div class="page-title">
                 <div class="card card-absolute mt-5 mt-md-4">
                     <div class="card-header bg-primary">
-                        <h5 class="text-white">🍕 • Tambah Reservasi Baru</h5>
+                        <h5 class="text-white"> • Edit Reservasi</h5>
                     </div>
                     <div class="card-body">
                         <p>
-                            Dibawah ini adalah halaman untuk tambah menu. <span class="d-none d-md-inline">
-                                Menu yang telah kamu tambahkan nantinya muncul di halaman landing page
+                            Dibawah ini adalah halaman untuk reservasi. <span class="d-none d-md-inline">
+
 
                             </span>
                         </p>
@@ -34,7 +35,7 @@
                 <div class="col-sm-12">
                     <div class="card">
                         <div class="card-header">
-                            <h5>Tambah Menu</h5>
+                            <h5>Edit Reservasi</h5>
                         </div>
                         <div class="card-body add-post">
                             @if ($errors->any())

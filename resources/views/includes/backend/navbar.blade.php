@@ -3,7 +3,7 @@
         <div class="header-logo-wrapper">
             <div class="logo-wrapper">
                 <a href="index.html">
-                    <img class="img-fluid" src="../assets/images/logo/logo.png" alt="">
+                    <img class="img-fluid" src="{{url('cuba/assets/images/icon.png')}}" alt="">
                 </a>
             </div>
             <div class="toggle-sidebar">
@@ -21,15 +21,21 @@
                         </span>
                     </a>
                 </li>
-                <li class="level-menu outside">
-                    <a class="nav-link" style="background-color: #ffefbe"
-                        href="{{ '/admin/reservations/create' }}">
-                        <i data-feather="plus-square"></i>
-                        <span class="d-none d-sm-none d-md-inline-block">
-                            Tambah Reservasi
-                        </span>
-                    </a>
+                For Trouble :
+                <li>
+                            <a class="link-dark text-decoration-none" href="https://wa.me/+6281238935021">
+                             &nbsp; Contact Me
+                            </a>
+                      
+                   
+                            <a class="link-dark text-decoration-none" href="https://www.linkedin.com/in/ahmadghozali25" target="_blank">
+                                &nbsp; Linkedin
+                            </a>
+                     
+                      
                 </li>
+
+
             </ul>
         </div>
         <div class="nav-right col-8 pull-right right-header p-0">

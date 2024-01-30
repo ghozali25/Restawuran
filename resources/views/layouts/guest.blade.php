@@ -12,8 +12,8 @@
     <meta name="description" content="  Restawuran adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
                         dessert dan lain lain dengan harga kaki lima namun rasanya bintang lima. Outlet kita selalu
                         rame, jadi jangan lupa reservasi ya!">
-    <link rel="icon" href="{{ url('cuba/assets/images/favicon.ico') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ url('cuba/assets/images/icon-192.png') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@xz/fonts@1/serve/plus-jakarta-display.min.css" />
@@ -59,10 +59,10 @@
                             <a class="nav-link" href="/#tentang-kami">Tentang Kami</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('categories.index') }}">Kategori</a>
+                            <a class="nav-link" href="{{ route('categories.index') }}">Kategori Produk</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('menus.index') }}">Menu</a>
+                            <a class="nav-link" href="{{ route('menus.index') }}">Daftar Produk</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="/#galeri-outlet">Galeri Outlet</a>
@@ -71,7 +71,7 @@
                     <hr />
                     <div class="d-grid gap-2">
                         <button class="btn btn-warning text-white me-2 px-5 fw-500"
-                            onclick="location.href='http://127.0.0.1:8000/reservation/step-one'" type="button"> <i
+                        onclick="location.href = '{{ route('reservations.store.step.one') }}'" type="button"> <i
                                 class="fas fa-calendar-plus"></i> &nbsp; &nbsp; Buat
                             Reservasi</button>
                     </div>
@@ -91,10 +91,10 @@
                     <a href="/#tentang-kami" class="nav-link link-dark text-grey px-2">Tentang Kami</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a href="{{ route('categories.index') }}" class="nav-link link-dark text-grey px-2">Kategori</a>
+                    <a href="{{ route('categories.index') }}" class="nav-link link-dark text-grey px-2">Kategori Produk</a>
                 </li>
                 <li class="nav-item me-2">
-                    <a href="{{ route('menus.index') }}" class="nav-link link-dark text-grey px-2">Menu</a>
+                    <a href="{{ route('menus.index') }}" class="nav-link link-dark text-grey px-2">Daftar Produk</a>
                 </li>
                 <li class="nav-item me-2">
                     <a href="/#galeri-outlet" class="nav-link link-dark text-grey px-2">Galeri Outlet</a>
@@ -111,10 +111,10 @@
                     <a href="https://wa.me/+6281238935021" class="nav-link link-dark text-grey px-2" target="_blank">
                         +6281238935021</a>
                 </li>
-                <li class="nav-item">
+               <!-- <li class="nav-item">
                     <a href="https://wa.me/+62000000000" target="_blank"
                         class="nav-link link-dark text-grey px-2">+628000000</a>
-                </li>
+                </li>-->
             </ul>
         </div>
     </nav>
@@ -125,7 +125,7 @@
                 <span class="fs-3 fw-bold">&#9749; Restawuran</span>
             </a>
             <button class="btn btn-warning text-white me-2 px-5 fw-500"
-                onclick="location.href='http://127.0.0.1:8000/reservation/step-one'" type="button"> <i
+            onclick="location.href = '{{ route('reservations.store.step.one') }}'" type="button"> <i
                     class="fas fa-calendar-plus"></i> &nbsp; &nbsp; Buat
                 Reservasi</button>
         </div>
@@ -156,7 +156,7 @@
                     <h4 class="fw-bold mb-3">Navigasi Cepat</h4>
                     <ul class="list-unstyled">
                         <li class="mb-1">
-                            <a class="link-dark text-decoration-none" href="#">
+                            <a class="link-dark text-decoration-none" href="/">
                             &#8226; Beranda
                             </a>
                         </li>
@@ -167,12 +167,12 @@
                         </li>
                         <li class="mb-1">
                             <a class="link-dark text-decoration-none" href="{{ route('categories.index') }}">
-                            &#8226; Kategori
+                            &#8226; Kategori Produk 
                             </a>
                         </li>
                         <li class="mb-1">
                             <a class="link-dark text-decoration-none" href="{{ route('menus.index') }}">
-                            &#8226; Menu
+                            &#8226; Daftar Produk
                             </a>
                         </li>
                         <li class="mb-1">

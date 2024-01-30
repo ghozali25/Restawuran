@@ -3,28 +3,30 @@ var today = new Date();
 var curHr = today.getHours();
 
 if (curHr >= 0 && curHr < 4) {
-    document.getElementById("greeting").innerHTML = "Selamat Beristirahat 💤";
+    document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Beristirahat 💤";
 } else if (curHr >= 4 && curHr < 12) {
-    document.getElementById("greeting").innerHTML = "Selamat Pagi 🌄";
+    document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Pagi 🌄";
 } else if (curHr >= 12 && curHr < 16) {
-    document.getElementById("greeting").innerHTML = "Selamat Siang ☀";
+    document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Siang ☀";
 } else {
-    document.getElementById("greeting").innerHTML = "Selamat Malam 🌙";
+    document.getElementById("greeting").innerHTML = "Hai Kamu, Selamat Malam 🌙";
 }
+
 // time
 function startTime() {
     var today = new Date();
     var h = today.getHours();
     var m = today.getMinutes();
     // var s = today.getSeconds();
-    var ampm = h >= 12 ? "PM" : "AM";
-    h = h % 12;
-    h = h ? h : 12;
+
+    h = checkTime(h);
     m = checkTime(m);
     // s = checkTime(s);
-    document.getElementById("txt").innerHTML = h + ":" + m + " " + ampm;
+
+    document.getElementById("txt").innerHTML = h + ":" + m;
     var t = setTimeout(startTime, 500);
 }
+
 function checkTime(i) {
     if (i < 10) {
         i = "0" + i;
@@ -32,56 +34,38 @@ function checkTime(i) {
     return i;
 }
 
+startTime(); // Call startTime once to display the initial time
+
+
 // currently sale
 var options = {
     series: [
         {
-            name: "series1",
-            data: [6, 20, 15, 40, 18, 20, 18, 23, 18, 35, 30, 55, 0],
-        },
-        {
-            name: "series2",
-            data: [2, 22, 35, 32, 40, 25, 50, 38, 42, 28, 20, 45, 0],
+            name: "Reservation",
+            data: [0, 6, 20, 15, 40, 18, 20, 18, 23, 18, 35, 30, 55],
         },
     ],
     chart: {
-        height: 240,
+        height: 200,
         type: "area",
         toolbar: {
             show: false,
         },
     },
     dataLabels: {
-        enabled: false,
+        enabled: true,
     },
     stroke: {
         curve: "smooth",
     },
     xaxis: {
         type: "category",
-        low: 0,
-        offsetX: 0,
-        offsetY: 0,
-        show: false,
-        categories: [
-            "Jan",
-            "Feb",
-            "Mar",
-            "Apr",
-            "May",
-            "Jun",
-            "Jul",
-            "Aug",
-            "Sep",
-            "Oct",
-            "Nov",
-            "Dec",
-            "Jan",
-        ],
+        show: true,
+        categories: ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
         labels: {
             low: 0,
             offsetX: 0,
-            show: false,
+            show: true,
         },
         axisBorder: {
             low: 0,
@@ -101,11 +85,11 @@ var options = {
         low: 0,
         offsetX: 0,
         offsetY: 0,
-        show: false,
+        show: true,
         labels: {
             low: 0,
             offsetX: 0,
-            show: false,
+            show: true,
         },
         axisBorder: {
             low: 0,
@@ -114,7 +98,7 @@ var options = {
         },
     },
     grid: {
-        show: false,
+        show: true,
         padding: {
             left: 0,
             right: 0,
@@ -127,8 +111,8 @@ var options = {
         type: "gradient",
         gradient: {
             shadeIntensity: 1,
-            opacityFrom: 0.7,
-            opacityTo: 0.5,
+            opacityFrom: 0.8,
+            opacityTo: 0.6,
             stops: [0, 80, 100],
         },
     },
