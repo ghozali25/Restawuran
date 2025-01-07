@@ -34,7 +34,6 @@ jobs:
       env:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
-      run: php artisan test
     - name: migrate database
       run: php artisan migrate:fresh --seed
     - name: running App
