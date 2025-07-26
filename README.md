@@ -73,7 +73,9 @@ $ php artisan serve
 # Selamat aplikasi dapat anda nikmati di local!
 
 # untuk menghubungkan gambar di admin
-$ php artisan storage:link
+$ php artisan storage:link 
+
+bash```
 
 <p></p>
 
