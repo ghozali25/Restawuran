@@ -74,8 +74,7 @@ $ php artisan serve
 
 # untuk menghubungkan gambar di admin
 $ php artisan storage:link 
-
-bash```
+```
 
 <p></p>
 
