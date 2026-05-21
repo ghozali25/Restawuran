@@ -7,7 +7,7 @@
 
 <h2 id="tentang">Tentang Restawuran</h2>
 
-Website ini berperan sebagai homepage untuk menampilkan menu dan kategori makanan atau minuman apa saja yang ada di restoran anda untuk mempermudah pelanggan melihat menu dimana saja dan kapan saja. Restawrant juga dilengkapi sistem reservasi meja untuk kemudahan pelanggan dalam memesan atau booking meja.
+Website ini berperan sebagai homepage untuk menampilkan menu dan kategori makanan atau minuman apa saja yang ada di restoran anda untuk mempermudah pelanggan melihat menu dimana saja dan kapan saja. Restawuran juga dilengkapi sistem reservasi meja untuk kemudahan pelanggan dalam memesan atau booking meja.
 
 <p></p>
 
@@ -38,7 +38,7 @@ Berikut adalah daftar akun untuk keperluan testing saat anda mencoba aplikasi pe
 
 <h2 id="syarat">Prasyarat yang Diperlukan</h2>
 
-Berikut adalah daftar layanan dan aplikasi yang wajib dan diperlukan selama anda menjalankan aplikasi restawrant jika anda belum menginstall nya maka disarankan untuk menginstall nya terlebih dahulu
+Berikut adalah daftar layanan dan aplikasi yang wajib dan diperlukan selama anda menjalankan aplikasi Restawuran jika anda belum menginstall nya maka disarankan untuk menginstall nya terlebih dahulu
 
 -   PHP 8 & Web Server [XAMPP, LAMPP, MAMP]
 -   Web Browser [Chrome, Firefox, Safari & Opera]

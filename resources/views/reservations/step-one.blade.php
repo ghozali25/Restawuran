@@ -40,7 +40,7 @@
                         <div class="col-md-12">
                             <label for="email_input" class="form-label">Email</label>
                             <input type="text" name="email" value="{{ $reservation->email ?? '' }}"
-                                placeholder="contoh : restawrant@example.com" class="form-control" id="email_input" />
+                                placeholder="contoh : Restawuran@example.com" class="form-control" id="email_input" />
                             @error('email')
                                 <p class="register_text_error">{{ $message }}</p>
                             @enderror

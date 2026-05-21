@@ -9,7 +9,7 @@
     <meta name="description" content="  Restawuran adalah restoran yang menyediakan berbagai macam kategori makanan mulai dari minuman,
                         dessert dan lain lain dengan harga kaki lima namun rasanya bintang lima. Outlet kita selalu
                         rame, jadi jangan lupa reservasi ya!">
-    <meta name="keywords" content="Restawrant, Open Source Restaurant Website">
+    <meta name="keywords" content="Restawuran, Open Source Restaurant Website">
     <meta name="author" content="Ahmad Ghozali">
     <link rel="icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ url('cuba/assets/images/icon.png') }}" type="image/x-icon">
